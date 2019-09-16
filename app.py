@@ -28,7 +28,7 @@ cosine_dist = torch.nn.CosineSimilarity(dim=1, eps=1e-6)
 application = Flask(__name__)
 
 try:
-    model = torch.jit.load("./model/InceptionResnetV1-jit.pth", map_location=torch.device('cpu'))
+    model = torch.jit.load("/tmp/InceptionResnetV1-jit.pth", map_location=torch.device('cpu'))
     model.eval()
 except ValueError:
     application.logger.info('value error, create folder and downloading model')
